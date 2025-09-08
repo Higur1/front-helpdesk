@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Import components
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -42,7 +42,7 @@ import { NavComponent } from './components/nav/nav.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatFormFieldModule,
-    MatPaginator,
+    MatPaginatorModule,
     MatSnackBarModule,
     MatCheckboxModule,
     MatToolbarModule,
@@ -53,7 +53,7 @@ import { NavComponent } from './components/nav/nav.component';
     MatInputModule,
     MatIconModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
