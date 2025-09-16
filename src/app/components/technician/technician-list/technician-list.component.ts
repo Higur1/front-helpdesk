@@ -25,7 +25,7 @@ export class TechnicianListComponent implements OnInit {
 
   findAll() {
     this.service.findAll().subscribe(response => {
-      this.ELEMENT_DATA = response
+      this.ELEMENT_DATA = response;
       this.dataSource = new MatTableDataSource<Technician>(response);
       this.dataSource.paginator = this.paginator;
     });
