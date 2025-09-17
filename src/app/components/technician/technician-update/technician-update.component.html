@@ -1,27 +1,29 @@
 <div class="container mat-elevation-z8">
     <form class="form">
-        <h1 class="fullWidth">Register Technician</h1>
+        <h1 class="fullWidth">Update Technician</h1>
         <img class="fullWidth" src="assets/img/technician-create.svg" alt="Help Desk - Higor Hungria">
 
         <section class="section">
             <mat-checkbox 
-            (click)="addProfile('ADMIN')" 
+            (change)="addProfile('ADMIN')" 
             class="margin" 
+            [checked]="verifyAdminProfile()"
             color="primary">
                 Administrador
             </mat-checkbox>
 
             <mat-checkbox 
-            (click)="addProfile('CUSTOMER')" 
+            (change)="addProfile('CUSTOMER')" 
             class="margin" 
+            [checked]="verifyCustomerProfile()"
             color="primary">
                 Customer
             </mat-checkbox>
 
             <mat-checkbox 
-            (click)="addProfile('TECHNICIAN')" 
-            class="margin" 
+            (change)="addProfile('TECHNICIAN')" 
             [checked]="true"
+            class="margin" 
             color="primary">
                 Technician
             </mat-checkbox>
@@ -82,12 +84,12 @@
 
         <button 
         [disabled]="!fieldValidation()" 
-        (click)="create()"
+        (click)="update()"
         class="fullWidth mat-elevation-z4"
          mat-flat-button 
-         color="primary">Register</button>
+         color="primary">Update</button>
 
-        <button routerLink="../" 
+        <button routerLink="../../" 
         class="fullWidth mat-elevation-z4" 
         mat-stroked-button 
         color="warn">Cancel</button>

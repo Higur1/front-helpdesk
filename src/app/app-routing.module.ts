@@ -6,6 +6,7 @@ import { TechnicianListComponent } from './components/technician/technician-list
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './auth/auth.guard';
 import { TechnicianCreateComponent } from './components/technician/technician-create/technician-create.component';
+import { TechnicianUpdateComponent } from './components/technician/technician-update/technician-update.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,8 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       
       { path: 'technicians', component: TechnicianListComponent },
-      { path: 'technicians/create', component: TechnicianCreateComponent}
+      { path: 'technicians/create', component: TechnicianCreateComponent},
+      { path: 'technicians/update/:id', component: TechnicianUpdateComponent}
     ]
   }
 ];
