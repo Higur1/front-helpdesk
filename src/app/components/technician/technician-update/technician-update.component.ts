@@ -52,7 +52,6 @@ export class TechnicianUpdateComponent implements OnInit {
   }
   
   update(): void {
-    console.log(this.technician.profiles)
     this.service.update(this.technician).subscribe(() => {
       this.toast.success('Technician successfully update', 'Updated');
       this.router.navigate(['technicians'])
