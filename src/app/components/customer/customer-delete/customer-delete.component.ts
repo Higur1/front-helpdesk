@@ -48,7 +48,7 @@ export class CustomerDeleteComponent implements OnInit {
   
   delete(): void {
     this.service.delete(this.customer).subscribe(() => {
-      this.toast.success('Customer successfully delete', 'Deleted');
+      this.toast.success('Customer successfully deleted', 'Deleted');
       this.router.navigate(['customers']);
     }, ex => {
       console.log(ex)
