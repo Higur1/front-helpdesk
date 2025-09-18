@@ -8,6 +8,10 @@ import { AuthGuard } from './auth/auth.guard';
 import { TechnicianCreateComponent } from './components/technician/technician-create/technician-create.component';
 import { TechnicianUpdateComponent } from './components/technician/technician-update/technician-update.component';
 import { TechnicianDeleteComponent } from './components/technician/technician-delete/technician-delete.component';
+import { CustomerCreateComponent } from './components/customer/customer-create/customer-create.component';
+import { CustomerListComponent } from './components/customer/customer-list/customer-list.component';
+import { CustomerUpdateComponent } from './components/customer/customer-update/customer-update.component';
+import { CustomerDeleteComponent } from './components/customer/customer-delete/customer-delete.component';
 
 const routes: Routes = [
   {
@@ -16,11 +20,16 @@ const routes: Routes = [
   {
     path: '', component: NavComponent, canActivate: [AuthGuard], children: [
       { path: 'home', component: HomeComponent },
-      
+
       { path: 'technicians', component: TechnicianListComponent },
-      { path: 'technicians/create', component: TechnicianCreateComponent},
-      { path: 'technicians/update/:id', component: TechnicianUpdateComponent},
-      { path: 'technicians/delete/:id', component: TechnicianDeleteComponent}
+      { path: 'technicians/create', component: TechnicianCreateComponent },
+      { path: 'technicians/update/:id', component: TechnicianUpdateComponent },
+      { path: 'technicians/delete/:id', component: TechnicianDeleteComponent },
+
+      { path: 'customers', component: CustomerListComponent },
+      { path: 'customers/create', component: CustomerCreateComponent },
+      { path: 'customers/update/:id', component: CustomerUpdateComponent },
+      { path: 'customers/delete/:id', component: CustomerDeleteComponent }
     ]
   }
 ];
