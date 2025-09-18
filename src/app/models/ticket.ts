@@ -6,6 +6,8 @@ export interface Ticket {
     status: string;
     title: string;
     observation: string;
-    technician: any;
-    customer: any;
+    technicianId: any;
+    technicianName: string;
+    customerId: any;
+    customerName: string;
 }
