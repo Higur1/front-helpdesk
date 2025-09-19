@@ -1,6 +1,7 @@
 <div class="container">
     <h1>Ticket List</h1>
-    <button class="mat-elevation-z8" mat-flat-button color="primary">New Ticket</button>
+    <button routerLink="create" class="mat-elevation-z8" mat-flat-button color="primary">New Ticket</button>
+    
     <mat-form-field appearance="standard">
         <mat-label>Filter</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex." #input>
