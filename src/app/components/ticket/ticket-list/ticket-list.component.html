@@ -7,9 +7,9 @@
     </mat-form-field>
 
     <mat-radio-group color="primary">
-        <mat-radio-button>Open</mat-radio-button>
-        <mat-radio-button>Procceding</mat-radio-button>
-        <mat-radio-button>Closed</mat-radio-button>
+        <mat-radio-button (click)="orderByStatus('OPEN')" value="OPEN">Open</mat-radio-button>
+        <mat-radio-button (click)="orderByStatus('PROCCEEDING')" value="PROCCEEDING">Procceding</mat-radio-button>
+        <mat-radio-button (click)="orderByStatus('CLOSED')" value="CLOSED">Closed</mat-radio-button>
     </mat-radio-group>
 
     <div class="mat-elevation-z8">
