@@ -12,6 +12,9 @@ export class TicketService {
   constructor(private http:HttpClient) { }
 
   findAll(): Observable<Ticket[]>{
-    return this.http.get<Ticket[]>(`${API_CONFIG.baseUrl}/tickets`)
+    return this.http.get<Ticket[]>(`${API_CONFIG.baseUrl}/tickets`);
+  }
+  create(ticket: Ticket): Observable<Ticket>{
+    return this.http.post<Ticket>(`${API_CONFIG.baseUrl}/tickets`, ticket);
   }
 }
