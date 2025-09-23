@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Customer } from 'src/app/models/customer';
 import { Technician } from 'src/app/models/technician';
@@ -41,17 +41,29 @@ export class TicketUpdateComponent implements OnInit {
     private customerService: CustomerService,
     private technicianService: TechnicianService,
     private toastrService: ToastrService,
+    private route: ActivatedRoute,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.ticket.id = this.route.snapshot.paramMap.get('id');
+    this.findById();
     this.findAllCustomers();
     this.findAllTechnician();
   }
 
-  create(): void {
-    this.ticketService.create(this.ticket).subscribe(response =>{
-      this.toastrService.success('Ticket successfully registered', 'Registered');
+  findById(): void {
+    this.ticketService.findById(this.ticket.id).subscribe(response => {
+      console.log(response)
+      this.ticket = response;
+    }, ex => {
+      this.toastrService.error(ex.error.error, 'Error');
+    })
+  }
+
+  update(): void {
+    this.ticketService.update(this.ticket,).subscribe(response => {
+      this.toastrService.success('Ticket successfully updated', 'Updated');
       this.router.navigate(['tickets']);
     }, ex => {
       this.toastrService.error(ex.error.error, 'Error');
