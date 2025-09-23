@@ -1,1 +1,100 @@
-<p>ticket-update works!</p>
+<div class="container mat-elevation-z8">
+    <h1 class="full-width">Updating Ticket</h1>
+    <img class="full-width" src="assets/img/ticket-create.svg" alt="Help Desk - Higor Hungria">
+
+    <form class="form">
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Title of ticket</mat-label>
+            <input 
+            [(ngModel)]="ticket.title"
+            name="title"
+            [formControl]="title" 
+            required 
+            matInput 
+            placeholder="Ex. Title">
+        </mat-form-field>
+    </form>
+
+    <div class="status-priority">
+        <mat-form-field appearance="outline">
+            <mat-label>Select a status</mat-label>
+            <mat-select 
+            [(ngModel)]="ticket.status"
+            name="status"
+            [formControl]="status" 
+            required>
+                <mat-option value="OPEN">OPEN</mat-option>
+                <mat-option value="PROCEEDING">PROCEEDING</mat-option>
+                <mat-option value="CLOSED">CLOSED</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Select a priority</mat-label>
+            <mat-select 
+            [(ngModel)]="ticket.priority"
+            name="priority"
+            [formControl]="priority" 
+            required>
+                <mat-option value="LOW">LOW</mat-option>
+                <mat-option value="MEDIUM">MEDIUM</mat-option>
+                <mat-option value="HIGH">HIGH</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="technician">
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Select a technician</mat-label>
+            <mat-select  
+            [(ngModel)]="ticket.technicianId"
+            name="technicianId" 
+            [formControl]="technician" 
+            required>
+                <mat-option *ngFor="let technician of technicians" value="{{technician.id}}">{{technician.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="customer">
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Select a customer</mat-label>
+            <mat-select 
+            [(ngModel)]="ticket.customerId"
+            name="customerId" 
+            [formControl]="customer" 
+            required>
+                <mat-option *ngFor="let customer of customers" value="{{customer.id}}">{{customer.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <form class="form">
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Observation</mat-label>
+            <textarea  
+            [(ngModel)]="ticket.observation"
+            name="observation" 
+            [formControl]="observation" 
+            required
+            matInput 
+            class="observation" 
+            placeholder="Ex. Ticket observation example"></textarea>
+        </mat-form-field>
+    </form>
+
+    <button 
+    [disabled]="!fieldValidation()" 
+    (click)="create()"
+    mat-raised-button 
+    class="full-width mat-elevation-z4"
+    color="primary">Update</button>
+
+    <button 
+    routerLink="../"
+    mat-stroked-button 
+    class="full-width mat-elevation-z4"
+    color="warn">Cancel</button>
+
+    <p class="fullWidth">Developed by Higor Hungria</p>
+</div>
