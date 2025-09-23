@@ -8,9 +8,9 @@
     </mat-form-field>
 
     <mat-radio-group color="primary">
-        <mat-radio-button (click)="orderByStatus('OPEN')" value="OPEN">Open</mat-radio-button>
+        <mat-radio-button (click)="orderByStatus('OPEN')" value="OPEN">OPEN</mat-radio-button>
         <mat-radio-button (click)="orderByStatus('PROCEEDING')" value="PROCEEDING">PROCEEDING</mat-radio-button>
-        <mat-radio-button (click)="orderByStatus('CLOSED')" value="CLOSED">Closed</mat-radio-button>
+        <mat-radio-button (click)="orderByStatus('CLOSED')" value="CLOSED">CLOSED</mat-radio-button>
     </mat-radio-group>
 
     <div class="mat-elevation-z8">
@@ -37,12 +37,12 @@
             </ng-container>
 
             <ng-container matColumnDef="customerName">
-                <th mat-header-cell *matHeaderCellDef> Customer </th>
+                <th mat-header-cell *matHeaderCellDef> Customer Name </th>
                 <td mat-cell *matCellDef="let element"> {{element.customerName}} </td>
             </ng-container>
 
             <ng-container matColumnDef="technicianName">
-                <th mat-header-cell *matHeaderCellDef> Customer </th>
+                <th mat-header-cell *matHeaderCellDef> Technician Name </th>
                 <td mat-cell *matCellDef="let element"> {{element.technicianName}} </td>
             </ng-container>
 
