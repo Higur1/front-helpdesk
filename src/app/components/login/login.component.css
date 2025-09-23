@@ -34,6 +34,10 @@ button {
     margin-top: 1.5rem;
 }
 
+mat-icon {
+    opacity: .6;
+}
+
 ::ng-deep .form .mat-input-element,
 ::ng-deep .form .mat-form-field-label,
 ::ng-deep .form mat-label {
